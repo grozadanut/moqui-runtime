@@ -244,6 +244,9 @@ along with this software (see the LICENSE.md file). If not, see
                 <resource name="reset"><method type="post">
                     <service name="org.moqui.impl.UserServices.reset#Password"/></method></resource>
             </resource>
+            <resource name="singleUseAuthcCodes">
+                <method type="post"><service name="org.moqui.impl.UserServices.create#SingleUseAuthcCodes"/></method>
+            </resource>
         </id>
     </resource>
 
