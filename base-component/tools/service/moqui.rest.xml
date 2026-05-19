@@ -247,6 +247,9 @@ along with this software (see the LICENSE.md file). If not, see
             <resource name="singleUseAuthcCodes">
                 <method type="post"><service name="org.moqui.impl.UserServices.create#SingleUseAuthcCodes"/></method>
             </resource>
+            <resource name="userAuthcFactorEmail">
+                <method type="post"><service name="org.moqui.impl.UserServices.create#UserAuthcFactorEmail"/></method>
+            </resource>
         </id>
     </resource>
 
