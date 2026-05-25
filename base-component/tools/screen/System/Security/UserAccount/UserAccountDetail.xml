@@ -81,6 +81,8 @@ along with this software (see the LICENSE.md file). If not, see
                 in-map="[artifactTarpitLockId:artifactTarpitLockId, releaseDateTime:ec.user.nowTimestamp]"/>
         <default-response url="."/></transition>
 
+    <transition-include name="trustedDeviceSubmit" location="component://tools/screen/System/Security/UserAccount/UserAccountDetail/TrustedDevices.xml"/>
+
     <actions>
         <entity-find-one entity-name="moqui.security.UserAccount" value-field="userAccount"/>
 
@@ -373,6 +375,7 @@ along with this software (see the LICENSE.md file). If not, see
                         </form-list>
                     </box-body-nopad>
                 </container-box>
+                <include-screen location="component://tools/screen/System/Security/UserAccount/UserAccountDetail/TrustedDevices.xml"/>
 
                 <!-- TODO: consider adding full history to another screen (tab); now limited to most recent 20 -->
                 <label text="Login History" type="h5"/>

@@ -49,6 +49,12 @@
                 <input id="login_form_code" name="code" type="text" inputmode="numeric" autocomplete="one-time-code"
                        required="required" class="form-control bottom"
                        placeholder="${ec.l10n.localize("Authentication Code")}" aria-label="${ec.l10n.localize("Authentication Code")}">
+                <div class="form-group">
+                    <div class="col-sm-1">
+                        <input id="login_form_trustDevice" name="trustDevice" type="checkbox" value="true" class="form-control" checked>
+                    </div>
+                    <label for="login_form_trustDevice" class="col-sm-11">${ec.getL10n().localize("Trust Device")}</label>
+                </div>
             <#else>
                 <input type="password" name="password" required="required" class="form-control <#if secondFactorRequired>middle<#else>bottom</#if>"
                        placeholder="${ec.l10n.localize("Password")}" aria-label="${ec.l10n.localize("Password")}">

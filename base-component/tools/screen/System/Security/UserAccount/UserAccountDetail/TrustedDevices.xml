@@ -1,0 +1,26 @@
+<screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-3.xsd"
+        default-menu-include="false">
+    <transition name="trustedDeviceSubmit"><service-call name="delete#moqui.security.TrustedDeviceUserAccount"/>
+        <default-response url="."/></transition>
+
+    <widgets>
+        <container-box><box-header title="Trusted Devices"/>
+            <box-body-nopad>
+                <form-list name="TrustedDeviceUserAccountList" list="trustedDeviceUserAccountList" transition="trustedDeviceSubmit">
+                    <entity-find entity-name="moqui.security.TrustedDeviceUserAccount" list="trustedDeviceUserAccountList">
+                        <date-filter/><econdition field-name="userId"/>
+                        <order-by field-name="-fromDate"/>
+                    </entity-find>
+
+                    <field name="userId" from="userId"><default-field><hidden/></default-field></field>
+                    <field name="deviceId"><header-field title="ID"/>
+                        <default-field><display/></default-field></field>
+                    <field name="name"><default-field><display/></default-field></field>
+                    <field name="fromDate"><header-field/><default-field><display/></default-field></field>
+                    <field name="thruDate"><default-field><display/></default-field></field>
+                    <field name="delete"><default-field title=" "><submit text=" " icon="fa fa-trash"/></default-field></field>
+                </form-list>
+            </box-body-nopad>
+        </container-box>
+    </widgets>
+</screen>
